@@ -34,7 +34,7 @@
             <div class="op1">
                 <p class="text-lg bold">Length</p>
                 
-            <label for="s1">
+            <label for="s2">
                 <input type="text" class="border rounded bg-teal-900 ml-2 w-20" bind:value={$valI}>
                 <p class="text-xs">Generate this many powers of 10</p>
             </label>
