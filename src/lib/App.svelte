@@ -1,10 +1,11 @@
 <script>
 
-  import Box1 from "./box1.svelte";
   import {valI} from "../stores/data.js";
   import {valO, flag} from "../stores/outputData.js";
-  import Box2 from "./box2.svelte";
+  import Box2 from "./PowerOf10.svelte";
   import { each } from "svelte/internal";
+    import PowerOf2 from "./PowerOf2.svelte";
+    import PowerOf10 from "./PowerOf10.svelte";
   // import Route1 from "../routes/route1.svelte";
 
   // let arr = []; 
@@ -42,19 +43,21 @@
   <div class="text-white"> 
     </div>
     <div class="flex center-contents justify-evenly">
-        <div class="text-teal-700 mx-20 text-center my-4">
+        <!-- <div class="text-teal-700 mx-20 text-center my-4">
             <p class="font-bold">INPUT</p>
             
             <textarea style="resize: none;" class="text-white bg-teal-600 w-96 h-72" name="" id="t1" cols="30" rows="10" on:keydown={num}></textarea>
             <div>
               <button on:click={inputTake} class="bg-teal-700 text-white rounded border-2 m-1 p-1 hover:bg-teal-900">SUBMIT</button>
             </div>
-        </div>
+        </div> -->
         <div class="text-teal-700 mx-20 text-center my-4">
             <p class="font-bold">OUTPUT</p>
             <div class="bg-teal-600 w-96 h-72 text-white" id="Op">
               {#if $flag == 1}
-                <ul>{$valO}</ul>
+                {#each $valO as ele}
+                  <ul>{ele}</ul>
+                {/each}
               {/if}
           </div>
         </div>
@@ -62,8 +65,9 @@
 </div>
 
   <div class="flex content-center mx-3 justify-evenly">
-    <Box1/>
-    <Box2/>
+    <!-- <Box1/> -->
+    <PowerOf2/>
+    <PowerOf10/>
     <!-- <Box3/> -->
   </div>
   <div class="text-center text-teal-800 font-bold">
